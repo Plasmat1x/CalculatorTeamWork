@@ -24,4 +24,4 @@ Teamwork calculator
 
 ### Диаграммы
 
-[!Diagram](./GitResources/TWCalculator.drawio.png)
+![Diagram](./GitResources/TWCalculator.drawio.png)
