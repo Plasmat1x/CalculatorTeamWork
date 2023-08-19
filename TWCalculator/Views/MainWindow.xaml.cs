@@ -330,6 +330,19 @@ namespace TWCalculator.Views
                 btRes_Click(sender, e);
                 return;
             }
+            if (e.Key == Key.Back)
+            {
+                btRes_Click(sender, e);
+                return;
+            }
+        }
+
+        private void btBackspace_Click(object sender, RoutedEventArgs e)
+        {
+            if (InputField.Text.Length != 0)
+            {
+                InputField.Text = InputField.Text.Substring(0, InputField.Text.Length - 1);
+            }
         }
     }
 }

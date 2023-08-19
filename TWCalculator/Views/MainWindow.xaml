@@ -22,7 +22,7 @@
         <TextBox Height="60" Name="InputField" IsReadOnly="True" Margin="5,5,5,5" FontSize="32"/>
 
         <StackPanel Margin="5,5,5,5" Orientation="Horizontal">
-            <Button Content="←" Name="btBackspace" Style="{StaticResource KeyboardKey1}"/>
+            <Button Content="←" Name="btBackspace" Style="{StaticResource KeyboardKey1}" Click="btBackspace_Click"/>
             <Button Content="C" Name="btClear" Click="btClear_Click" Style="{StaticResource KeyboardKey1}"/>
         </StackPanel>
     
