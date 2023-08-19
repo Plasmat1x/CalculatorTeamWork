@@ -47,7 +47,7 @@ namespace TWCalculator.Views
 
         private void bt0_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(InputField.Text)) InputField.Text += "0";
+            InputField.Text += "0";
         }
 
         private void btPoint_Click(object sender, RoutedEventArgs e)
