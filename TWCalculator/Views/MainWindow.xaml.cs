@@ -12,8 +12,9 @@ namespace TWCalculator.Views
         float ROperand;
 
         bool Point;
+        bool Res; // not implemented
 
-        public delegate Result Operation(float l, float r);
+        delegate Result Operation(float l, float r);
 
         Operation operation;
 
@@ -24,8 +25,6 @@ namespace TWCalculator.Views
             InitializeComponent();
             calculator = new Calculator();
         }
-
-
 
         private void bt1_Click(object sender, RoutedEventArgs e) => InputField.Text += "1";
 
@@ -45,10 +44,7 @@ namespace TWCalculator.Views
 
         private void bt9_Click(object sender, RoutedEventArgs e) => InputField.Text += "9";
 
-        private void bt0_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "0";
-        }
+        private void bt0_Click(object sender, RoutedEventArgs e) => InputField.Text += "0";
 
         private void btPoint_Click(object sender, RoutedEventArgs e)
         {
@@ -133,6 +129,7 @@ namespace TWCalculator.Views
             }
             opHistory.Content += ROperand.ToString();
             Point = false;
+            Res = true;
         }
 
         private void btClear_Click(object sender, RoutedEventArgs e)
