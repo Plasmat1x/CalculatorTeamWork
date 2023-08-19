@@ -11,8 +11,8 @@
     </Window.Resources>
     
     <StackPanel>
-        <Label Content="History"/>
-        <TextBox Height="20"/>
+        <Label Content="History" Name="opHistory"/>
+        <TextBox Height="20" Name="inputField"/>
         
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,10 +29,10 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Content="1" Name="bt1"/>
-            <Button Grid.Column="1" Grid.Row="0" Content="2" Name="bt2"/>
-            <Button Grid.Column="2" Grid.Row="0" Content="3" Name="bt3"/>
-            <Button Grid.Column="3" Grid.Row="0" Content="+" Name="btAdd"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="1" Name="bt1" Click="bt1_Click"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="2" Name="bt2" Click="bt2_Click"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="3" Name="bt3" Click="bt3_Click"/>
+            <Button Grid.Column="3" Grid.Row="0" Content="+" Name="btAdd" Click="btAdd_Click"/>
                                                              
             <Button Grid.Column="0" Grid.Row="1" Content="4" Name="bt4"/>
             <Button Grid.Column="1" Grid.Row="1" Content="5" Name="bt5"/>
@@ -49,7 +49,6 @@
             <Button Grid.Column="2" Grid.Row="3" Content="," Name="btPoint"/>
             <Button Grid.Column="3" Grid.Row="3" Content="/" Name="btDiv"/>
         </Grid>
-        <Button Content="=" Name="btRes"/>
-
+        <Button Content="=" Name="btRes" Click="btRes_Click"/>
     </StackPanel>
 </Window>
