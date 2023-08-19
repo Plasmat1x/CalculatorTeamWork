@@ -25,95 +25,25 @@ namespace TWCalculator.Views
             calculator = new Calculator();
         }
 
-        private void btAdd_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(inputField.Text))
-            {
-                float.TryParse(inputField.Text, out LOperand);
-                inputField.Text = "";
-                operation = calculator.Add;
-            }
 
-        }
 
-        private void bt2_Click(object sender, RoutedEventArgs e)
-        {
-            inputField.Text += "2";
-        }
+        private void bt1_Click(object sender, RoutedEventArgs e) => InputField.Text += "1";
 
-        private void bt1_Click(object sender, RoutedEventArgs e)
-        {
-            inputField.Text += "1";
-        }
+        private void bt2_Click(object sender, RoutedEventArgs e) => InputField.Text += "2";
 
-        private void bt3_Click(object sender, RoutedEventArgs e)
-        {
-            inputField.Text += "3";
-        }
+        private void bt3_Click(object sender, RoutedEventArgs e) => InputField.Text += "3";
 
-        private void btRes_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(inputField.Text))
-            {
-                float.TryParse(inputField.Text, out ROperand);
+        private void bt4_Click(object sender, RoutedEventArgs e) => InputField.Text += "4";
 
-                Result res = operation.Invoke(LOperand, ROperand);
+        private void bt5_Click(object sender, RoutedEventArgs e) => InputField.Text += "5";
 
-                if (res.status == Status.SUCCESS)
-                {
-                    inputField.Text = res.Value.ToString();
-                }
-                else
-                {
-                    inputField.Text = "ERROR";
-                }
-            }
-        }
+        private void bt6_Click(object sender, RoutedEventArgs e) => InputField.Text += "6";
 
-        private void bt1_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "1";
-        }
+        private void bt7_Click(object sender, RoutedEventArgs e) => InputField.Text += "7";
 
-        private void bt2_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "2";
-        }
+        private void bt8_Click(object sender, RoutedEventArgs e) => InputField.Text += "8";
 
-        private void bt3_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "3";
-        }
-
-        private void bt4_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "4";
-        }
-
-        private void bt5_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "5";
-        }
-
-        private void bt6_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "6";
-        }
-
-        private void bt7_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "7";
-        }
-
-        private void bt8_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "8";
-        }
-
-        private void bt9_Click(object sender, RoutedEventArgs e)
-        {
-            InputField.Text += "9";
-        }
+        private void bt9_Click(object sender, RoutedEventArgs e) => InputField.Text += "9";
 
         private void bt0_Click(object sender, RoutedEventArgs e)
         {
@@ -122,18 +52,97 @@ namespace TWCalculator.Views
 
         private void btPoint_Click(object sender, RoutedEventArgs e)
         {
-            if(!point)
+            if (!Point)
             {
-                if(string.IsNullOrEmpty(InputField.Text))
+                if (string.IsNullOrEmpty(InputField.Text))
                 {
                     InputField.Text = "0,";
                 }
                 else
                 {
                     InputField.Text += ",";
-                    point = true;
-                }                
+                    Point = true;
+                }
             }
+        }
+
+        private void btAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(InputField.Text))
+            {
+                float.TryParse(InputField.Text, out LOperand);
+                InputField.Text = "";
+                operation = calculator.Add;
+            }
+            opHistory.Content = $"{LOperand} + ";
+            Point = false;
+        }
+
+        private void btDim_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(InputField.Text))
+            {
+                float.TryParse(InputField.Text, out LOperand);
+                InputField.Text = "";
+                operation = calculator.Sub;
+            }
+            opHistory.Content = $"{LOperand} - ";
+            Point = false;
+        }
+
+        private void btMult_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(InputField.Text))
+            {
+                float.TryParse(InputField.Text, out LOperand);
+                InputField.Text = "";
+                operation = calculator.Mul;
+            }
+            opHistory.Content = $"{LOperand} * ";
+            Point = false;
+        }
+
+        private void btDiv_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(InputField.Text))
+            {
+                float.TryParse(InputField.Text, out LOperand);
+                InputField.Text = "";
+                operation = calculator.Div;
+            }
+            opHistory.Content = $"{LOperand} / ";
+            Point = false;
+        }
+
+        private void btRes_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(InputField.Text) && operation != null)
+            {
+                float.TryParse(InputField.Text, out ROperand);
+
+                Result res = operation.Invoke(LOperand, ROperand);
+
+                if (res.status == Status.SUCCESS)
+                {
+                    InputField.Text = res.Value.ToString();
+                }
+                else
+                {
+                    InputField.Text = "ERROR";
+                }
+            }
+            opHistory.Content += ROperand.ToString();
+            Point = false;
+        }
+
+        private void btClear_Click(object sender, RoutedEventArgs e)
+        {
+            LOperand = 0.0f;
+            ROperand = 0.0f;
+            Point = false;
+            operation = null;
+            InputField.Text = "";
+            opHistory.Content = "";
         }
     }
 }
