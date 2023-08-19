@@ -13,7 +13,7 @@
     <StackPanel>
 
         <Label Content="History" Name="opHistory"/>
-        <TextBox Height="20" Name="InputField"/>
+        <TextBox Height="20" Name="InputField" IsReadOnly="True"/>
       
         <Grid>
             <Grid.ColumnDefinitions>
