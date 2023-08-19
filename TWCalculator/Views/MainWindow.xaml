@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TWCalculator.Views"
         mc:Ignorable="d"
-        Title="Calculator" Height="550" Width="370">
+        Title="Calculator" Height="600" Width="370">
     <Window.Resources>
         <Style x:Key="KeyboardKey1" TargetType="Button">
             <Setter Property="Margin" Value="5,5,5,5"/>
@@ -20,8 +20,13 @@
         <Label Content="History" Name="opHistory" Margin="5,5,5,5"/>
         <TextBox Height="60" Name="InputField" IsReadOnly="True" Margin="5,5,5,5" FontSize="32"/>
 
+        <StackPanel Margin="5,5,5,5" Orientation="Horizontal">
+            <Button Content="←" Name="btBackspace" Style="{StaticResource KeyboardKey1}"/>
+            <Button Content="C" Name="btClear" Click="btClear_Click" Style="{StaticResource KeyboardKey1}"/>
+        </StackPanel>
+    
         <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
-            <StackPanel Margin="5,5,35,5">
+            <StackPanel Margin="5,5,35,5" Orientation="Vertical">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -51,7 +56,7 @@
                     <Button Grid.Column="2" Grid.Row="2" Content="9" Name="bt9" Click="bt9_Click" Style="{StaticResource KeyboardKey1}"/>
 
 
-                    <Button Grid.Column="0" Grid.Row="3" Content="C" Name="btClear" Click="btClear_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="0" Grid.Row="3" Content="+/-" Name="btInverse" Style="{StaticResource KeyboardKey1}" Click="btInverse_Click"/>
                     <Button Grid.Column="1" Grid.Row="3" Content="0" Name="bt0" Click="bt0_Click" Style="{StaticResource KeyboardKey1}"/>
                     <Button Grid.Column="2" Grid.Row="3" Content="," Name="btPoint" Click="btPoint_Click" Style="{StaticResource KeyboardKey1}"/>
 
