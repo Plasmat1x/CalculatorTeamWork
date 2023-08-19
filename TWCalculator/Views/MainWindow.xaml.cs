@@ -332,7 +332,12 @@ namespace TWCalculator.Views
             }
             if (e.Key == Key.Back)
             {
-                btRes_Click(sender, e);
+                btBackspace_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.OemComma || e.Key == Key.OemPeriod || e.Key == Key.Decimal)
+            {
+                btPoint_Click(sender, e);
                 return;
             }
         }
