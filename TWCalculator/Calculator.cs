@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace CalcTW
 {
-    enum Status
+    public enum Status
     {
         SUCCESS,
         ERROR
     }
 
-    internal class Calculator
+    public struct Result
     {
-        internal struct Result
-        {
-            public Status status;
-            public float Value;
-        }
+        public Status status;
+        public float Value;
+    }
 
-        internal Result Add(float a, float b)
+    public class Calculator
+    {
+        public Result Add(float a, float b)
         {
             Result result = new Result();
             result.Value = a + b;
@@ -29,7 +29,7 @@ namespace CalcTW
             return result;
         }
 
-        internal Result Sub(float a, float b)
+        public Result Sub(float a, float b)
         {
             Result result = new Result();
             result.Value = a - b;
@@ -38,7 +38,7 @@ namespace CalcTW
             return result;
         }
 
-        internal Result Mul(float a, float b)
+        public Result Mul(float a, float b)
         {
             Result result = new Result();
             result.Value = a * b;
@@ -47,7 +47,7 @@ namespace CalcTW
             return result;
         }
 
-        internal Result Div(float a, float b)
+        public Result Div(float a, float b)
         {
             Result result = new Result();
             if (b != 0)
