@@ -11,6 +11,7 @@
             <Setter Property="Margin" Value="5,5,5,5"/>
             <Setter Property="Width" Value="60"/>
             <Setter Property="Height" Value="60"/>
+            <Setter Property="FontSize" Value="32"/>
         </Style>
 
     </Window.Resources>
@@ -65,6 +66,6 @@
             
         </StackPanel>
         
-        <Button Content="=" Name="btRes" Click="btRes_Click" Margin="5,5,5,5" Height="60"/>
+        <Button Content="=" Name="btRes" Click="btRes_Click" Margin="5,5,5,5" Height="60" FontSize="32"/>
     </StackPanel>
 </Window>
