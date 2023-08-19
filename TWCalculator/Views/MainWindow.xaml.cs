@@ -1,5 +1,6 @@
 ﻿using CalcTW;
 using System.Windows;
+using System.Windows.Input;
 
 namespace TWCalculator.Views
 {
@@ -246,6 +247,88 @@ namespace TWCalculator.Views
                 float.TryParse(InputField.Text, out tmp);
                 tmp *= -1;
                 InputField.Text = tmp.ToString();
+            }
+        }
+
+        private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            //digits
+            if (e.Key == Key.NumPad1 || e.Key == Key.D1)
+            {
+                bt1_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad2 || e.Key == Key.D2)
+            {
+                bt2_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad3 || e.Key == Key.D3)
+            {
+                bt3_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad4 || e.Key == Key.D4)
+            {
+                bt4_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad5 || e.Key == Key.D5)
+            {
+                bt5_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad6 || e.Key == Key.D6)
+            {
+                bt6_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad7 || e.Key == Key.D7)
+            {
+                bt7_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad8 || e.Key == Key.D8)
+            {
+                bt8_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad9 || e.Key == Key.D9)
+            {
+                bt9_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.NumPad0 || e.Key == Key.D0)
+            {
+                bt0_Click(sender, e);
+                return;
+            }
+
+            //operations
+            if (e.Key == Key.Subtract)
+            {
+                btDim_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.Add)
+            {
+                btAdd_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.Divide)
+            {
+                btDiv_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.Multiply)
+            {
+                btMult_Click(sender, e);
+                return;
+            }
+            if (e.Key == Key.Enter)
+            {
+                btRes_Click(sender, e);
+                return;
             }
         }
     }
