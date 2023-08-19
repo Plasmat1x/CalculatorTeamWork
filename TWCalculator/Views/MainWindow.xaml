@@ -12,7 +12,7 @@
     
     <StackPanel>
         <Label Content="History"/>
-        <TextBox Height="20"/>
+        <TextBox Name ="InputField" Height="20"/>
         
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,24 +29,24 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Content="1" Name="bt1"/>
-            <Button Grid.Column="1" Grid.Row="0" Content="2" Name="bt2"/>
-            <Button Grid.Column="2" Grid.Row="0" Content="3" Name="bt3"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="1" Name="bt1" Click="bt1_Click"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="2" Name="bt2" Click="bt2_Click"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="3" Name="bt3" Click="bt3_Click"/>
             <Button Grid.Column="3" Grid.Row="0" Content="+" Name="btAdd"/>
                                                              
-            <Button Grid.Column="0" Grid.Row="1" Content="4" Name="bt4"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="5" Name="bt5"/>
-            <Button Grid.Column="2" Grid.Row="1" Content="6" Name="bt6"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="4" Name="bt4" Click="bt4_Click"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="5" Name="bt5" Click="bt5_Click"/>
+            <Button Grid.Column="2" Grid.Row="1" Content="6" Name="bt6" Click="bt6_Click"/>
             <Button Grid.Column="3" Grid.Row="1" Content="-" Name="btDim"/>
                                                              
-            <Button Grid.Column="0" Grid.Row="2" Content="7" Name="bt7"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="8" Name="bt8"/>
-            <Button Grid.Column="2" Grid.Row="2" Content="9" Name="bt9"/>
+            <Button Grid.Column="0" Grid.Row="2" Content="7" Name="bt7" Click="bt7_Click"/>
+            <Button Grid.Column="1" Grid.Row="2" Content="8" Name="bt8" Click="bt8_Click"/>
+            <Button Grid.Column="2" Grid.Row="2" Content="9" Name="bt9" Click="bt9_Click"/>
             <Button Grid.Column="3" Grid.Row="2" Content="*" Name="btMult"/>
                                                              
             <Button Grid.Column="0" Grid.Row="3" Content="C" Name="btClear"/>
-            <Button Grid.Column="1" Grid.Row="3" Content="0" Name="bt0"/>
-            <Button Grid.Column="2" Grid.Row="3" Content="," Name="btPoint"/>
+            <Button Grid.Column="1" Grid.Row="3" Content="0" Name="bt0" Click="bt0_Click"/>
+            <Button Grid.Column="2" Grid.Row="3" Content="," Name="btPoint" Height="20" Grid.RowSpan="2" VerticalAlignment="Top" Click="btPoint_Click"/>
             <Button Grid.Column="3" Grid.Row="3" Content="/" Name="btDiv"/>
         </Grid>
         <Button Content="=" Name="btRes"/>
