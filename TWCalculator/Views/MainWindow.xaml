@@ -5,56 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TWCalculator.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="Calculator" Height="550" Width="370">
     <Window.Resources>
         <Style x:Key="KeyboardKey1" TargetType="Button">
-            <Setter Property="Margin" Value="1,1,1,1"/>
-            <Setter Property="Width" Value="45"/>
-            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="60"/>
         </Style>
 
     </Window.Resources>
-    
-    <StackPanel>
 
-        <Label Content="History" Name="opHistory" Margin="1,1,1,1"/>
-        <TextBox Height="60" Name="InputField" IsReadOnly="True" Margin="1,1,1,1" FontSize="32"/>
-      
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+    <StackPanel Margin="5,5,5,5">
+        <Label Content="History" Name="opHistory" Margin="5,5,5,5"/>
+        <TextBox Height="60" Name="InputField" IsReadOnly="True" Margin="5,5,5,5" FontSize="32"/>
 
-            <Button Grid.Column="0" Grid.Row="0" Content="1" Name="bt1" Click="bt1_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="1" Grid.Row="0" Content="2" Name="bt2" Click="bt2_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="2" Grid.Row="0" Content="3" Name="bt3" Click="bt3_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="3" Grid.Row="0" Content="+" Name="btAdd" Click="btAdd_Click" Style="{StaticResource KeyboardKey1}"/>
+        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+            <StackPanel Margin="5,5,35,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="1" Content="4" Name="bt4" Click="bt4_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="5" Name="bt5" Click="bt5_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="2" Grid.Row="1" Content="6" Name="bt6" Click="bt6_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="3" Grid.Row="1" Content="-" Name="btDim" Click="btDim_Click" Style="{StaticResource KeyboardKey1}"/>
-                                                             
-            <Button Grid.Column="0" Grid.Row="2" Content="7" Name="bt7" Click="bt7_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="8" Name="bt8" Click="bt8_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="2" Grid.Row="2" Content="9" Name="bt9" Click="bt9_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="3" Grid.Row="2" Content="*" Name="btMult" Click="btMult_Click" Style="{StaticResource KeyboardKey1}"/>
-                                                             
-            <Button Grid.Column="0" Grid.Row="3" Content="C" Name="btClear" Click="btClear_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="1" Grid.Row="3" Content="0" Name="bt0" Click="bt0_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="2" Grid.Row="3" Content="," Name="btPoint" Click="btPoint_Click" Style="{StaticResource KeyboardKey1}"/>
-            <Button Grid.Column="3" Grid.Row="3" Content="/" Name="btDiv" Click="btDiv_Click" Style="{StaticResource KeyboardKey1}"/>
-        </Grid>
-        <Button Content="=" Name="btRes" Click="btRes_Click" Margin="1,1,1,1" Height="45"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="0" Grid.Row="0" Content="1" Name="bt1" Click="bt1_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="1" Grid.Row="0" Content="2" Name="bt2" Click="bt2_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="2" Grid.Row="0" Content="3" Name="bt3" Click="bt3_Click" Style="{StaticResource KeyboardKey1}"/>
+
+
+                    <Button Grid.Column="0" Grid.Row="1" Content="4" Name="bt4" Click="bt4_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="1" Grid.Row="1" Content="5" Name="bt5" Click="bt5_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="2" Grid.Row="1" Content="6" Name="bt6" Click="bt6_Click" Style="{StaticResource KeyboardKey1}"/>
+
+
+                    <Button Grid.Column="0" Grid.Row="2" Content="7" Name="bt7" Click="bt7_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="1" Grid.Row="2" Content="8" Name="bt8" Click="bt8_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="2" Grid.Row="2" Content="9" Name="bt9" Click="bt9_Click" Style="{StaticResource KeyboardKey1}"/>
+
+
+                    <Button Grid.Column="0" Grid.Row="3" Content="C" Name="btClear" Click="btClear_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="1" Grid.Row="3" Content="0" Name="bt0" Click="bt0_Click" Style="{StaticResource KeyboardKey1}"/>
+                    <Button Grid.Column="2" Grid.Row="3" Content="," Name="btPoint" Click="btPoint_Click" Style="{StaticResource KeyboardKey1}"/>
+
+                </Grid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+                <Button Content="+" Name="btAdd" Click="btAdd_Click" Style="{StaticResource KeyboardKey1}"/>
+                <Button Content="-" Name="btDim" Click="btDim_Click" Style="{StaticResource KeyboardKey1}"/>
+                <Button Content="*" Name="btMult" Click="btMult_Click" Style="{StaticResource KeyboardKey1}"/>
+                <Button Content="/" Name="btDiv" Click="btDiv_Click" Style="{StaticResource KeyboardKey1}"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        <Button Content="=" Name="btRes" Click="btRes_Click" Margin="5,5,5,5" Height="60"/>
     </StackPanel>
 </Window>
