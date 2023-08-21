@@ -88,6 +88,7 @@ namespace TWCalculator.Views
 
         private void btPoint_Click(object sender, RoutedEventArgs e)
         {
+            Res = false;
             if (!InputField.Text.Contains(','))
             {
                 if (string.IsNullOrEmpty(InputField.Text))
@@ -367,6 +368,7 @@ namespace TWCalculator.Views
 
         private void btBackspace_Click(object sender, RoutedEventArgs e)
         {
+            Res = false;
             if (InputField.Text.Length != 0)
             {
                 InputField.Text = InputField.Text.Substring(0, InputField.Text.Length - 1);
