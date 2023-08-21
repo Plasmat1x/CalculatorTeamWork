@@ -113,6 +113,23 @@ namespace TWCalculator.Views
                 }
                 opHistory.Content = $"{LOperand} + ";
             }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} + ";
+                        operation = calculator.Add;
+                        InputField.Text = "";
+                    }
+                }
+            }
         }
 
         private void btDim_Click(object sender, RoutedEventArgs e)
@@ -126,6 +143,23 @@ namespace TWCalculator.Views
                     operation = calculator.Sub;
                 }
                 opHistory.Content = $"{LOperand} - ";
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} - ";
+                        operation = calculator.Sub;
+                        InputField.Text = "";
+                    }
+                }
             }
         }
 
@@ -141,6 +175,23 @@ namespace TWCalculator.Views
                 }
                 opHistory.Content = $"{LOperand} * ";
             }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} * ";
+                        operation = calculator.Mul;
+                        InputField.Text = "";
+                    }
+                }
+            }
         }
 
         private void btDiv_Click(object sender, RoutedEventArgs e)
@@ -154,6 +205,23 @@ namespace TWCalculator.Views
                     operation = calculator.Div;
                 }
                 opHistory.Content = $"{LOperand} / ";
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} / ";
+                        operation = calculator.Div;
+                        InputField.Text = "";
+                    }
+                }
             }
 
         }
