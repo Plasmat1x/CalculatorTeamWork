@@ -12,8 +12,7 @@ namespace TWCalculator.Views
         float LOperand;
         float ROperand;
 
-        bool Point;
-        bool Res; // not implemented
+        bool Res;
 
         delegate Result Operation(float l, float r);
 
@@ -29,107 +28,67 @@ namespace TWCalculator.Views
 
         private void bt1_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "1";
         }
 
         private void bt2_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "2";
         }
 
         private void bt3_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "3";
         }
 
         private void bt4_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "4";
         }
 
         private void bt5_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "5";
         }
 
         private void bt6_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "6";
         }
 
         private void bt7_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "7";
         }
 
         private void bt8_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "8";
         }
 
         private void bt9_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "9";
         }
 
         private void bt0_Click(object sender, RoutedEventArgs e)
         {
-            if (Res)
-            {
-                InputField.Text = "";
-                Res = false;
-            }
+            cls();
             InputField.Text += "0";
         }
 
         private void btPoint_Click(object sender, RoutedEventArgs e)
         {
-            if (!Point)
+            if (!InputField.Text.Contains(','))
             {
                 if (string.IsNullOrEmpty(InputField.Text))
                 {
@@ -138,7 +97,6 @@ namespace TWCalculator.Views
                 else
                 {
                     InputField.Text += ",";
-                    Point = true;
                 }
             }
         }
@@ -154,7 +112,23 @@ namespace TWCalculator.Views
                     operation = calculator.Add;
                 }
                 opHistory.Content = $"{LOperand} + ";
-                Point = false;
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} + ";
+                        operation = calculator.Add;
+                        InputField.Text = "";
+                    }
+                }
             }
         }
 
@@ -169,7 +143,23 @@ namespace TWCalculator.Views
                     operation = calculator.Sub;
                 }
                 opHistory.Content = $"{LOperand} - ";
-                Point = false;
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} - ";
+                        operation = calculator.Sub;
+                        InputField.Text = "";
+                    }
+                }
             }
         }
 
@@ -184,7 +174,23 @@ namespace TWCalculator.Views
                     operation = calculator.Mul;
                 }
                 opHistory.Content = $"{LOperand} * ";
-                Point = false;
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} * ";
+                        operation = calculator.Mul;
+                        InputField.Text = "";
+                    }
+                }
             }
         }
 
@@ -199,7 +205,23 @@ namespace TWCalculator.Views
                     operation = calculator.Div;
                 }
                 opHistory.Content = $"{LOperand} / ";
-                Point = false;
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(InputField.Text))
+                {
+                    float.TryParse(InputField.Text, out ROperand);
+
+                    Result tmp = operation.Invoke(LOperand, ROperand);
+                    if (tmp.status == Status.SUCCESS)
+                    {
+                        LOperand = tmp.Value;
+                        ROperand = 0.0f;
+                        opHistory.Content = $"{LOperand} / ";
+                        operation = calculator.Div;
+                        InputField.Text = "";
+                    }
+                }
             }
 
         }
@@ -224,7 +246,6 @@ namespace TWCalculator.Views
                 opHistory.Content += ROperand.ToString();
             }
 
-            Point = false;
             Res = true;
             operation = null;
         }
@@ -233,7 +254,6 @@ namespace TWCalculator.Views
         {
             LOperand = 0.0f;
             ROperand = 0.0f;
-            Point = false;
             operation = null;
             InputField.Text = "";
             opHistory.Content = "";
@@ -252,6 +272,8 @@ namespace TWCalculator.Views
 
         private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
+            if (e.Key == Key.Space) return;
+
             //digits
             if (e.Key == Key.NumPad1 || e.Key == Key.D1)
             {
@@ -347,6 +369,15 @@ namespace TWCalculator.Views
             if (InputField.Text.Length != 0)
             {
                 InputField.Text = InputField.Text.Substring(0, InputField.Text.Length - 1);
+            }
+        }
+
+        private void cls()
+        {
+            if (Res)
+            {
+                InputField.Text = "";
+                Res = false;
             }
         }
     }
