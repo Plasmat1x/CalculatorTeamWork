@@ -267,6 +267,7 @@ namespace TWCalculator.Views
                 float.TryParse(InputField.Text, out tmp);
                 tmp *= -1;
                 InputField.Text = tmp.ToString();
+                Res = false;
             }
         }
 
