@@ -7,40 +7,68 @@
         xmlns:local="clr-namespace:TWCalculator.Views"
         mc:Ignorable="d"
         Title="Calculator" 
-        Height="600" 
-        Width="800">
-    
+        Height="400" 
+        Width="300">
+
     <Window.Resources>
-        
+
     </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="2" TextWrapping="Wrap" Text="TextBox"  Name="InputField"  Margin="0,9,0,0" Grid.RowSpan="2"  Grid.ColumnSpan="7" Grid.Column="1" />
+        <Button Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="15"  Content="=" Name="btRes" Click="btRes_Click" Margin="0,3,0,0"/>
+        <Button Grid.Column="1" Content="C" Name="btClear" Click="btClear_Click" Grid.ColumnSpan="1"   Grid.Row="4" Margin="0,15,0,0" Grid.RowSpan="2"/>
 
-    <StackPanel Margin="5,5,5,5">
-        <Label Content=""  Name="opHistory"/>
-        <TextBox Height="40" Name="InputField" IsReadOnly="True"/>
+        <Button Grid.Column="3" Content="←" Name="btBackspace" Click="btBackspace_Click" Grid.Row="4" Margin="0,15,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="1" Content="1" Name="bt1" Click="bt1_Click" Grid.ColumnSpan="1" Grid.Row="6" Margin="0,14,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="3" Content="2" Name="bt2" Click="bt2_Click" Grid.ColumnSpan="1" Grid.Row="6" Margin="0,16,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="5" Content="3" Name="bt3" Click="bt3_Click" Grid.Row="6" Margin="0,16,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="1" Content="4" Name="bt4" Click="bt4_Click" Grid.ColumnSpan="1" Grid.Row="8" Margin="0,15,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="1" Content="4" x:Name="bt4_Copy" Click="bt4_Click" Grid.ColumnSpan="1" Grid.Row="8" Margin="0,15,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="3"  Content="5" Name="bt5" Click="bt5_Click" Grid.Row="8" Margin="0,15,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="5" Content="6" Grid.RowSpan="2" Grid.Row="8"  Name="bt6" Click="bt6_Click" Margin="0,15,0,0" />
+        <Button Grid.Column="1"  Content="7" Name="bt7" Click="bt7_Click" Grid.Row="10" Margin="0,14,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="3"  Content="8" Name="bt8" Click="bt8_Click" Grid.ColumnSpan="1" Grid.Row="10" Margin="0,14,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="5" Content="9" Name="bt9" Click="bt9_Click" Grid.Row="10" Margin="0,14,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="1" Content="+/-" Name="btInverse" Click="btInverse_Click" Grid.RowSpan="2" Grid.Row="12" Margin="0,14,0,0"/>
+        <Button Grid.Column="3"  Content="0" Name="bt0" Click="bt0_Click" Grid.ColumnSpan="1"  Grid.Row="12" Margin="0,14,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="5" Content="," Name="btPoint" Click="btPoint_Click" Grid.ColumnSpan="1" Grid.Row="12" Margin="0,14,0,0" Grid.RowSpan="2" />
+        <Button Grid.Column="7" Content="*" Name="btMult" Click="btMult_Click" Grid.ColumnSpan="1" Grid.RowSpan="2" Grid.Row="6" Margin="0,15,0,0"/>
+        <Button Grid.Column="7" Content="/" Name="btDiv" Click="btDiv_Click" Grid.Row="8" Margin="0,15,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="7" Content="+" Name="btAdd" Click="btAdd_Click" Grid.Row="10" Margin="0,14,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="7"  Content="-" Name="btDim" Click="btDim_Click" Grid.RowSpan="2" Grid.Row="12" Margin="0,14,0,0" />
+        <Label Grid.Column="1"  Content=""  Name="opHistory"  Grid.Row="1"/>
 
-            <!--Row0-->
-            <Button Grid.Row="0" Content="C" Name="btClear" Click="btClear_Click"/>
-            <Button Content="←" Name="btBackspace" Click="btBackspace_Click"/>
-            <Button Content="/" Name="btDiv" Click="btDiv_Click"/>
-            <!--Row1-->
-            <Button Grid.Column="0" Grid.Row="1" Content="1" Name="bt1" Click="bt1_Click"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="2" Name="bt2" Click="bt2_Click"/>
-            <Button Grid.Column="2" Grid.Row="1" Content="3" Name="bt3" Click="bt3_Click"/>
-            <Button Grid.Column="3" Grid.Row="1" Content="*" Name="btMult" Click="btMult_Click"/>
-            <!--Row2-->
-            <Button Content="4" Name="bt4" Click="bt4_Click"/>
-            <Button Content="5" Name="bt5" Click="bt5_Click"/>
-            <Button Content="6" Name="bt6" Click="bt6_Click"/>
-            <Button Content="+" Name="btAdd" Click="btAdd_Click"/>
-            <!--Row3-->
-            <Button Content="7" Name="bt7" Click="bt7_Click"/>
-            <Button Content="8" Name="bt8" Click="bt8_Click"/>
-            <Button Content="9" Name="bt9" Click="bt9_Click"/>
-            <Button Content="-" Name="btDim" Click="btDim_Click"/>
-            <!--Row4-->
-            <Button Content="+/-" Name="btInverse" Click="btInverse_Click"/>
-            <Button Content="0" Name="bt0" Click="bt0_Click"/>
-            <Button Content="," Name="btPoint" Click="btPoint_Click"/>
-            <Button Content="=" Name="btRes" Click="btRes_Click"/>
-    </StackPanel>
+
+
+    </Grid>
 </Window>
