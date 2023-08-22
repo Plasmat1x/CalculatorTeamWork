@@ -15,7 +15,7 @@
         MaxHeight="310"
         Background="DarkSlateGray">
     
-    <Window.Resources>
+    <Window.Resources> <!-->Adopted solution</!-->
         <Style x:Key="RoundCorner1" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
