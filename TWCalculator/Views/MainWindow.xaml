@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:TWCalculator.Views"
         mc:Ignorable="d"
         Title="Calculator" 
-        Height="400" 
+        Height="440" 
         Width="300">
 
     <Window.Resources>
@@ -16,9 +16,9 @@
     <Window.Foreground>
         <ImageBrush/>
     </Window.Foreground>
-   
+
     <Grid Background="#FFE4E1E1">
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="53*"/>
@@ -49,8 +49,10 @@
             <RowDefinition Height="37*"/>
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
-       
-        <TextBox Grid.Row="2" TextWrapping="Wrap" Text="0"  Name="InputField"  Margin="0,9,0,0" Grid.RowSpan="2"  Grid.ColumnSpan="7" Grid.Column="1" FontSize="28" />
+
+        <Label Content=""  Name="opHistory" Grid.ColumnSpan="7" Margin="0,0,0,3" Grid.RowSpan="3" Grid.Column="1"/>
+
+        <TextBox Grid.Row="2" TextWrapping="Wrap" Text=""  Name="InputField"  Margin="0,9,0,0" Grid.RowSpan="2"  Grid.ColumnSpan="7" Grid.Column="1" FontSize="28" IsReadOnly="True"/>
         <Button Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="15"  Content="=" Name="btRes" Click="btRes_Click" Margin="0,3,0,0" >
             <Button.Resources>
                 <Style TargetType="Border">
@@ -573,7 +575,5 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Label Content=""  Name="opHistory"/>
-
     </Grid>
 </Window>
