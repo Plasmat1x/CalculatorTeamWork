@@ -371,6 +371,11 @@ namespace TWCalculator.Views
             Res = false;
             if (InputField.Text.Length != 0)
             {
+                if (InputField.Text.Contains("ERROR"))
+                {
+                    InputField.Text = "";
+                    return;
+                }
                 InputField.Text = InputField.Text.Substring(0, InputField.Text.Length - 1);
             }
         }
