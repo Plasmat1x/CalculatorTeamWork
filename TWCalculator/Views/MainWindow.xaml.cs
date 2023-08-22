@@ -9,21 +9,21 @@ namespace TWCalculator.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        float LOperand;
-        float ROperand;
+        private float LOperand;
+        private float ROperand;
 
-        bool Res;
+        private bool Res;
 
-        delegate Result Operation(float l, float r);
+        private delegate Result Operation(float l, float r);
 
-        Operation operation;
-
-        Calculator calculator;
+        private Operation? operation;
+        private Calculator calculator;
 
         public MainWindow()
         {
             InitializeComponent();
             calculator = new Calculator();
+            operation = null;
         }
 
         private void bt1_Click(object sender, RoutedEventArgs e)
@@ -371,6 +371,11 @@ namespace TWCalculator.Views
             Res = false;
             if (InputField.Text.Length != 0)
             {
+                if (InputField.Text.Contains("ERROR"))
+                {
+                    InputField.Text = "";
+                    return;
+                }
                 InputField.Text = InputField.Text.Substring(0, InputField.Text.Length - 1);
             }
         }
