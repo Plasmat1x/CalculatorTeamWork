@@ -75,6 +75,8 @@
 
 #### Собрание 22 августа (вторник)
 
+[Запись собрания](https://drive.google.com/file/d/1-7_67OVw8NqLhrCMw_rG-3qdbQGBc6Zk/view?usp=sharing)
+
 **Пристутвовавшие:**
 
 * Шишков
