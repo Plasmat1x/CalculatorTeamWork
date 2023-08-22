@@ -132,7 +132,6 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="1"/>
-            <Setter Property="Height" Value="32"/>
             <Setter Property="Margin" Value="3,3,3,3"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="ExtraBold"/>
@@ -208,27 +207,27 @@
             <!--Row0-->
             <Button Grid.Column="0" Grid.Row="0" Content="C" Name="btClear" Click="btClear_Click" Style="{StaticResource RoundCorner0}"/>
             <Button Grid.Column="1" Grid.Row="0" Content="←" Name="btBackspace" Click="btBackspace_Click" Style="{StaticResource RoundCorner0}"/>
-            <Button Grid.Column="3" Grid.Row="0" Content="÷" Name="btDiv" Click="btDiv_Click" Style="{StaticResource RoundCorner0}"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="÷" Name="btDiv" Click="btDiv_Click" Style="{StaticResource RoundCorner0}"/>
+            <Button Grid.Column="3" Grid.Row="0" Content="×" Name="btMult" Click="btMult_Click" Style="{StaticResource RoundCorner0}"/>
             <!--Row1-->
             <Button Grid.Column="0" Grid.Row="1" Content="1" Name="bt1" Click="bt1_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="1" Grid.Row="1" Content="2" Name="bt2" Click="bt2_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="2" Grid.Row="1" Content="3" Name="bt3" Click="bt3_Click" Style="{StaticResource RoundCorner1}"/>
-            <Button Grid.Column="3" Grid.Row="1" Content="×" Name="btMult" Click="btMult_Click" Style="{StaticResource RoundCorner0}"/>
+            <Button Grid.Column="3" Grid.Row="1" Content="+" Name="btAdd" Click="btAdd_Click" Style="{StaticResource RoundCorner0}"/>
             <!--Row2-->
             <Button Grid.Column="0" Grid.Row="2" Content="4" Name="bt4" Click="bt4_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="1" Grid.Row="2" Content="5" Name="bt5" Click="bt5_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="2" Grid.Row="2" Content="6" Name="bt6" Click="bt6_Click" Style="{StaticResource RoundCorner1}"/>
-            <Button Grid.Column="3" Grid.Row="2" Content="+" Name="btAdd" Click="btAdd_Click" Style="{StaticResource RoundCorner0}"/>
+            <Button Grid.Column="3" Grid.Row="2" Content="−" Name="btDim" Click="btDim_Click" Style="{StaticResource RoundCorner0}"/>
             <!--Row3-->
             <Button Grid.Column="0" Grid.Row="3" Content="7" Name="bt7" Click="bt7_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="1" Grid.Row="3" Content="8" Name="bt8" Click="bt8_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="2" Grid.Row="3" Content="9" Name="bt9" Click="bt9_Click" Style="{StaticResource RoundCorner1}"/>
-            <Button Grid.Column="3" Grid.Row="3" Content="−" Name="btDim" Click="btDim_Click" Style="{StaticResource RoundCorner0}"/>
+            <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Content="=" Name="btRes" Click="btRes_Click" Style="{StaticResource RoundCorner}"/>
             <!--Row4-->
             <Button Grid.Column="0" Grid.Row="4" Content="+/-" Name="btInverse" Click="btInverse_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="1" Grid.Row="4" Content="0" Name="bt0" Click="bt0_Click" Style="{StaticResource RoundCorner1}"/>
             <Button Grid.Column="2" Grid.Row="4" Content="," Name="btPoint" Click="btPoint_Click" Style="{StaticResource RoundCorner1}"/>
-            <Button Grid.Column="3" Grid.Row="4" Content="=" Name="btRes" Click="btRes_Click" Style="{StaticResource RoundCorner}"/>
         </Grid>
     </StackPanel>
 </Window>
