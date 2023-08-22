@@ -7,13 +7,8 @@
         xmlns:local="clr-namespace:TWCalculator.Views"
         mc:Ignorable="d"
         Title="Calculator" 
-        Height="310" 
-        Width="200"
-        MinWidth="200"
-        MinHeight="310"
-        MaxWidth="200"
-        MaxHeight="310"
-        Background="DarkSlateGray">
+        Height="600" 
+        Width="800">
     
     <Window.Resources>
         
