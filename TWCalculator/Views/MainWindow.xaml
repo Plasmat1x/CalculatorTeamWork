@@ -121,7 +121,7 @@
     </Window.Resources>
 
     <StackPanel Margin="5,5,5,5">
-        <Label Content="History" Name="opHistory" Margin="5,0,5,0" Foreground="White"/>
+        <Label Content=""  Name="opHistory" Margin="5,0,5,0" Foreground="White"/>
         <TextBox Height="40" Name="InputField" IsReadOnly="True" Margin="5,0,5,5" FontSize="26" Background="LightSlateGray" Foreground="White"/>
 
         <Grid>
