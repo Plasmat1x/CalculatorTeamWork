@@ -13,7 +13,7 @@
         MinHeight="310"
         MaxWidth="200"
         MaxHeight="310"
-        Background="DarkSlateGray">
+        Background="DarkSlateGray" ResizeMode="CanMinimize" WindowStyle="ToolWindow">
 
     <Window.Resources>
         
