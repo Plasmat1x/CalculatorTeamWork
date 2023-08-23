@@ -1,5 +1,6 @@
 ﻿using CalcTW;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace TWCalculator.Views
@@ -18,7 +19,6 @@ namespace TWCalculator.Views
 
         private Operation? operation;
         private Calculator calculator;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -279,7 +279,8 @@ namespace TWCalculator.Views
             //digits
             if (e.Key == Key.NumPad1 || e.Key == Key.D1)
             {
-                bt1_Click(sender, e);
+                bt1.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                //bt1_Click(sender, e);
                 return;
             }
             if (e.Key == Key.NumPad2 || e.Key == Key.D2)
