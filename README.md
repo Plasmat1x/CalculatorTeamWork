@@ -95,5 +95,5 @@
 ![AppScr](./GitResources/TWCalculator.jpg)
 ![DiagramScr](./GitResources/TWCalculator-Page-2-Main.drawio.png)
 ![MockupScr](./GitResources/TWCalculatorMockup.drawio.png)
-![MockupNewStyle](./GitResources/NewStyle.jpg)
+![MockupNewStyle](./GitResources/Var1.jpg)
 ![MockupVar2](./GitResources/Var2.jpg)
