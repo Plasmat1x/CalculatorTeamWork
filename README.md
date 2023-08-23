@@ -87,8 +87,8 @@
 * Верстка (Собственное решение или в соответствии с диаграммой)
 * Цветовые решения (Собственное решение или в соответствии с диаграммой)
 
-*Вариант [Mryasov](https://github.com/Plasmat1x/CalculatorTeamWork/tree/Mryasov)*
-*Вариант [Shishkov](https://github.com/Plasmat1x/CalculatorTeamWork/tree/Shishkov.A.V)*
+*Вариант [Mryasov](./GitResources/Var1.jpg)*
+*Вариант [Shishkov](./GitResources/Var2.jpg)*
 
 ## Диаграммы и Скриншоты
 
